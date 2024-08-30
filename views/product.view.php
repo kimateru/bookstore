@@ -10,7 +10,7 @@ $productControler = new ProductController($db);
 $id = $_GET['id'];
 $product = $productControler->getProductById($id);
 
-$action = $user['role'] == 'admin' ? '../handlers/product.handler.php' : '../handlers/cartHandler.php';
+$action = $user['role'] == 'admin' ? '../handlers/product.handler.php' : '../handlers/cart.handler.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,11 +51,12 @@ $action = $user['role'] == 'admin' ? '../handlers/product.handler.php' : '../han
                     <p class="font-bold text-xl mt-5">Description:</p>
                     <p class="text-md"><?= htmlspecialchars($product['description']); ?></p>
                     <input type="hidden" name="productId" value="<?= $id ?>">
+                    <input type="hidden" name="userId" value="<?= $user['id'] ?>">
                     <?php if ($user['role'] == 'admin') : ?>
                         <button name="update_product" class="bg-blue-500 w-full text-white py-4 rounded-xl mt-5">Update</button>
                         <button name="delete_product" class="bg-[#EB5757] w-full text-white py-4 rounded-xl mt-5">Delete</button>
                     <?php else : ?>    
-                        <button class="bg-[#EB5757] w-full text-white py-4 rounded-xl mt-5">Add to cart</button>
+                        <button name="add_to_cart" class="bg-[#EB5757] w-full text-white py-4 rounded-xl mt-5">Add to cart</button>
                     <?php endif; ?>
                 </form>
             </div>

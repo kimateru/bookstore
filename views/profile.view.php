@@ -19,7 +19,7 @@ unset($_SESSION['errors_update']);
 <body>
     <div class="container mx-auto px-4 py-4">
         <div>
-            <a href="<?= $user['role'] == 'admin' ? 'admin.view.php' : 'main.view.php' ?>" class="flex items-center">
+            <a href="main.view.php" class="flex items-center">
                 <img src="../assets/site_assets/chevron-left.svg" alt="go back">
                 <span class="text-lg">
                     Home
