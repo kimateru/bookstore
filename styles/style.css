@@ -1,0 +1,11 @@
+#menu {
+    position: relative;
+    z-index: 100000;
+}
+#overlayMenu {
+    display: flex;
+    z-index: 9999;
+}
+#overlayMenu.active {
+    transform: scale(1);
+}

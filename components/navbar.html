@@ -1,0 +1,15 @@
+<nav class="flex justify-between items-center pt-4">
+    <img src="../assets/site_assets/menu.svg" alt="menu" id="menu">
+    <div class="flex justify-between items-center gap-2">
+        <img src="../assets/site_assets/notification.svg" alt="notification">
+        <a href="profile.view.php">
+            <img src="../assets/users/<?= $user['profile_pic'] ? htmlspecialchars($user['profile_pic']) : 'user_default.svg' ?>"
+                alt="user default pic" class="w-[50px] h-[50px] rounded-full object-cover">
+        </a>
+    </div>
+</nav>  
+<div id="overlayMenu" class="fixed inset-0 bg-white text-[#EB5757] flex flex-col items-center justify-center transform scale-0 transition-transform duration-300 text-2xl gap-5">
+    <a href="main.view.php">Home</a>
+    <a href="addProduct.view.php">Add Product</a>
+    <a href="profile.view.php">Profile</a>
+</div>
